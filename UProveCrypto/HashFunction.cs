@@ -69,8 +69,33 @@ namespace UProveCrypto
             {
                 hash = null;
             }
-#else
-            hash = HashAlgorithm.Create(hashAlgorithm);
+#else   // DOTNET CORE  (this was the 4.0 way; hash = HashAlgorithm.Create(hashAlgorithm);)
+            if (hashAlgorithm.Equals("SHA", StringComparison.OrdinalIgnoreCase) ||
+                hashAlgorithm.Equals("SHA1", StringComparison.OrdinalIgnoreCase) ||
+                hashAlgorithm.Equals("System.Security.Cryptography.SHA1", StringComparison.OrdinalIgnoreCase) ||
+                hashAlgorithm.Equals("http://www.w3.org/2000/09/xmldsig#sha1", StringComparison.OrdinalIgnoreCase))
+            {
+                hash = SHA1.Create();
+            }
+            else if (hashAlgorithm.Equals("SHA256", StringComparison.OrdinalIgnoreCase) ||
+                hashAlgorithm.Equals("SHA-256", StringComparison.OrdinalIgnoreCase) ||
+                hashAlgorithm.Equals("System.Security.Cryptography.SHA256", StringComparison.OrdinalIgnoreCase) ||
+                hashAlgorithm.Equals("http://www.w3.org/2001/04/xmlenc#sha256", StringComparison.OrdinalIgnoreCase))
+            {
+                hash = SHA256.Create();
+            }
+            else if (hashAlgorithm.Equals("SHA512", StringComparison.OrdinalIgnoreCase) ||
+              hashAlgorithm.Equals("SHA-512", StringComparison.OrdinalIgnoreCase) ||
+              hashAlgorithm.Equals("System.Security.Cryptography.SHA512", StringComparison.OrdinalIgnoreCase) ||
+              hashAlgorithm.Equals("http://www.w3.org/2001/04/xmlenc#sha512", StringComparison.OrdinalIgnoreCase))
+            {
+                hash = SHA512.Create();
+            }
+            else
+            {
+                hash = null;
+            }
+
 #endif // SILVERLIGHT
 #endif // NETFX_CORE
             if (hash == null)
