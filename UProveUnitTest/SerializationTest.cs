@@ -16,7 +16,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
 using UProveCrypto;
 using UProveCrypto.Math;
 
@@ -26,7 +26,7 @@ using UProveCrypto.Math;
 namespace UProveUnitTest
 {
     [TestClass]
-    [DeploymentItem(@"SerializationReference\", "SerializationReference")]
+   // [DeploymentItem(@"SerializationReference\", "SerializationReference")]
     public class SerializationTest
     {
         static bool CREATE_SERIALIZATION_TEST_FILES = false;
@@ -179,113 +179,113 @@ namespace UProveUnitTest
             }
 
         }
-        [TestMethod]
-        public void TestSerializationReference()
-        {
+        //[TestMethod]
+        //public void TestSerializationReference()
+        //{
 
-            // Create IssuerSetupParameters
-            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
-            foreach (string fileName in Directory.GetFiles("SerializationReference"))
-            {
-                FileStream f = File.OpenRead(fileName);
-                BinaryFormatter bf = new BinaryFormatter();
-                object[] parameters = (object[]) bf.Deserialize(f);
-                f.Close();
+        //    // Create IssuerSetupParameters
+        //    System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+        //    foreach (string fileName in Directory.GetFiles("SerializationReference"))
+        //    {
+        //        FileStream f = File.OpenRead(fileName);
+        //        BinaryFormatter bf = new BinaryFormatter();
+        //        object[] parameters = (object[]) bf.Deserialize(f);
+        //        f.Close();
 
-                bool useCustomGroup = (bool) parameters[0];
-                bool useSubgroupConstruction = (bool) parameters[1];
-                string typeName = (string)parameters[2];
-                string json = (string)parameters[3];
+        //        bool useCustomGroup = (bool) parameters[0];
+        //        bool useSubgroupConstruction = (bool) parameters[1];
+        //        string typeName = (string)parameters[2];
+        //        string json = (string)parameters[3];
 
-                IssuerSetupParameters isp = new IssuerSetupParameters();
-                if (useSubgroupConstruction)
-                {
-                    isp.GroupConstruction = GroupType.Subgroup;
-                    if (useCustomGroup)
-                    {
-                        byte[] p = HexToBytes("d21ae8d66e6c6b3ced0eb3df1a26c91bdeed013c17d849d30ec309813e4d3799f26db0d494e82ec61ea9fdc70bb5cbcaf2e5f18a836494f58e67c6d616480c37a7f2306101fc9f0f4768f9c9793c2be176b0b7c979b4065d3e835686a3f0b8420c6834cb17930386dedab2b07dd473449a48baab316286b421052475d134cd3b");
-                        byte[] q = HexToBytes("fff80ae19daebc61f46356af0935dc0e81148eb1");
-                        byte[] g = HexToBytes("abcec972e9a9dd8d133270cfeac26f726e567d964757630d6bd43460d0923a46aec0ace255ebf3ddd4b1c4264f53e68b361afb777a13cf0067dae364a34d55a0965a6cccf78852782923813cf8708834d91f6557d783ec75b5f37cd9185f027b042c1c72e121b1266a408be0bb7270d65917b69083633e1f3cd60624612fc8c1");
-                        isp.Gq = SubgroupGroup.CreateSubgroupGroup(
-                            p,
-                            q,
-                            g,
-                            null,
-                            null);
-                        isp.UidH = "SHA1";
-                    }
-                }
-                else
-                {
-                    isp.GroupConstruction = GroupType.ECC;
-                    if (useCustomGroup)
-                    {
-                        continue;
-                    }
-                }
+        //        IssuerSetupParameters isp = new IssuerSetupParameters();
+        //        if (useSubgroupConstruction)
+        //        {
+        //            isp.GroupConstruction = GroupType.Subgroup;
+        //            if (useCustomGroup)
+        //            {
+        //                byte[] p = HexToBytes("d21ae8d66e6c6b3ced0eb3df1a26c91bdeed013c17d849d30ec309813e4d3799f26db0d494e82ec61ea9fdc70bb5cbcaf2e5f18a836494f58e67c6d616480c37a7f2306101fc9f0f4768f9c9793c2be176b0b7c979b4065d3e835686a3f0b8420c6834cb17930386dedab2b07dd473449a48baab316286b421052475d134cd3b");
+        //                byte[] q = HexToBytes("fff80ae19daebc61f46356af0935dc0e81148eb1");
+        //                byte[] g = HexToBytes("abcec972e9a9dd8d133270cfeac26f726e567d964757630d6bd43460d0923a46aec0ace255ebf3ddd4b1c4264f53e68b361afb777a13cf0067dae364a34d55a0965a6cccf78852782923813cf8708834d91f6557d783ec75b5f37cd9185f027b042c1c72e121b1266a408be0bb7270d65917b69083633e1f3cd60624612fc8c1");
+        //                isp.Gq = SubgroupGroup.CreateSubgroupGroup(
+        //                    p,
+        //                    q,
+        //                    g,
+        //                    null,
+        //                    null);
+        //                isp.UidH = "SHA1";
+        //            }
+        //        }
+        //        else
+        //        {
+        //            isp.GroupConstruction = GroupType.ECC;
+        //            if (useCustomGroup)
+        //            {
+        //                continue;
+        //            }
+        //        }
 
-                isp.UidP = encoding.GetBytes("http://issuer/uprove/issuerparams/software");
-                isp.E = IssuerSetupParameters.GetDefaultEValues(3);
-                isp.S = encoding.GetBytes("application-specific specification");
+        //        isp.UidP = encoding.GetBytes("http://issuer/uprove/issuerparams/software");
+        //        isp.E = IssuerSetupParameters.GetDefaultEValues(3);
+        //        isp.S = encoding.GetBytes("application-specific specification");
 
-                // Generate IssuerKeyAndParameters
-                IssuerKeyAndParameters ikap = isp.Generate();
+        //        // Generate IssuerKeyAndParameters
+        //        IssuerKeyAndParameters ikap = isp.Generate();
 
-                // Create an IssuerParameters
-                IssuerParameters ip = ikap.IssuerParameters;
+        //        // Create an IssuerParameters
+        //        IssuerParameters ip = ikap.IssuerParameters;
 
-                // check that we didn't send any null fields
-                Assert.IsFalse(json.Contains(":null"));
+        //        // check that we didn't send any null fields
+        //        Assert.IsFalse(json.Contains(":null"));
 
-                string roundTrip = "";
-                if (typeName == "UProveCrypto.IssuerParameters")
-                {
-                    IssuerParameters obj = ip.Deserialize<IssuerParameters>(json);
-                    roundTrip = ip.Serialize<IssuerParameters>(obj);
-                }
-                else if (typeName == "UProveCrypto.IssuerKeyAndParameters")
-                {
-                    IssuerKeyAndParameters obj = ip.Deserialize<IssuerKeyAndParameters>(json);
-                    roundTrip = ip.Serialize<IssuerKeyAndParameters>(obj);
-                }
-                else if (typeName == "UProveCrypto.FirstIssuanceMessage")
-                {
-                    FirstIssuanceMessage obj = ip.Deserialize<FirstIssuanceMessage>(json);
-                    roundTrip = ip.Serialize<FirstIssuanceMessage>(obj);
-                }
-                else if (typeName == "UProveCrypto.SecondIssuanceMessage")
-                {
-                    SecondIssuanceMessage obj = ip.Deserialize<SecondIssuanceMessage>(json);
-                    roundTrip = ip.Serialize<SecondIssuanceMessage>(obj);
-                }
-                else if (typeName == "UProveCrypto.ThirdIssuanceMessage")
-                {
-                    ThirdIssuanceMessage obj = ip.Deserialize<ThirdIssuanceMessage>(json);
-                    roundTrip = ip.Serialize<ThirdIssuanceMessage>(obj);
-                }
-                else if (typeName == "UProveCrypto.UProveKeyAndToken")
-                {
-                    UProveKeyAndToken obj = ip.Deserialize<UProveKeyAndToken>(json);
-                    roundTrip = ip.Serialize<UProveKeyAndToken>(obj);
-                }
-                else if (typeName == "UProveCrypto.UProveToken")
-                {
-                    UProveToken obj = ip.Deserialize<UProveToken>(json);
-                    roundTrip = ip.Serialize<UProveToken>(obj);
-                }
-                else if (typeName == "UProveCrypto.PresentationProof")
-                {
-                    PresentationProof obj = ip.Deserialize<PresentationProof>(json);
-                    roundTrip = ip.Serialize<PresentationProof>(obj);
-                }
-                else
-                {
-                    Assert.Fail("Unrecognized type " + typeName + " in SerializationReference files");
-                }
+        //        string roundTrip = "";
+        //        if (typeName == "UProveCrypto.IssuerParameters")
+        //        {
+        //            IssuerParameters obj = ip.Deserialize<IssuerParameters>(json);
+        //            roundTrip = ip.Serialize<IssuerParameters>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.IssuerKeyAndParameters")
+        //        {
+        //            IssuerKeyAndParameters obj = ip.Deserialize<IssuerKeyAndParameters>(json);
+        //            roundTrip = ip.Serialize<IssuerKeyAndParameters>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.FirstIssuanceMessage")
+        //        {
+        //            FirstIssuanceMessage obj = ip.Deserialize<FirstIssuanceMessage>(json);
+        //            roundTrip = ip.Serialize<FirstIssuanceMessage>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.SecondIssuanceMessage")
+        //        {
+        //            SecondIssuanceMessage obj = ip.Deserialize<SecondIssuanceMessage>(json);
+        //            roundTrip = ip.Serialize<SecondIssuanceMessage>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.ThirdIssuanceMessage")
+        //        {
+        //            ThirdIssuanceMessage obj = ip.Deserialize<ThirdIssuanceMessage>(json);
+        //            roundTrip = ip.Serialize<ThirdIssuanceMessage>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.UProveKeyAndToken")
+        //        {
+        //            UProveKeyAndToken obj = ip.Deserialize<UProveKeyAndToken>(json);
+        //            roundTrip = ip.Serialize<UProveKeyAndToken>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.UProveToken")
+        //        {
+        //            UProveToken obj = ip.Deserialize<UProveToken>(json);
+        //            roundTrip = ip.Serialize<UProveToken>(obj);
+        //        }
+        //        else if (typeName == "UProveCrypto.PresentationProof")
+        //        {
+        //            PresentationProof obj = ip.Deserialize<PresentationProof>(json);
+        //            roundTrip = ip.Serialize<PresentationProof>(obj);
+        //        }
+        //        else
+        //        {
+        //            Assert.Fail("Unrecognized type " + typeName + " in SerializationReference files");
+        //        }
 
-                Assert.AreEqual(json, roundTrip);
-            }
-        }
+        //        Assert.AreEqual(json, roundTrip);
+        //    }
+        //}
 
 
         [TestMethod]
@@ -440,8 +440,8 @@ namespace UProveUnitTest
             // serialize the object to json string
             string json = ip.Serialize(obj);
 
-            if (CREATE_SERIALIZATION_TEST_FILES)
-                WriteSerializationTestFile(useCustomGroup, useSubroupConstruction, json, obj);
+            //if (CREATE_SERIALIZATION_TEST_FILES)
+            //    WriteSerializationTestFile(useCustomGroup, useSubroupConstruction, json, obj);
 
             // output the serialization string
             Debug.WriteLine(typeof(T).Name);
@@ -500,20 +500,20 @@ namespace UProveUnitTest
 
         }
 
-        private void WriteSerializationTestFile<T>(bool useCustomGroup, bool useSubgroupConstruction, string json, T obj)
-        {
-            FileStream fs = File.Open(Path.GetRandomFileName() + ".dat", FileMode.Create);
+        //private void WriteSerializationTestFile<T>(bool useCustomGroup, bool useSubgroupConstruction, string json, T obj)
+        //{
+        //    FileStream fs = File.Open(Path.GetRandomFileName() + ".dat", FileMode.Create);
 
-            BinaryFormatter bf = new BinaryFormatter();
-            object[] objects = new object[4];
-            objects[0] = useCustomGroup;
-            objects[1] = useSubgroupConstruction;
-            objects[2] = obj.GetType().FullName;
-            objects[3] = json;
-            bf.Serialize(fs, objects);
+        //    BinaryFormatter bf = new BinaryFormatter();
+        //    object[] objects = new object[4];
+        //    objects[0] = useCustomGroup;
+        //    objects[1] = useSubgroupConstruction;
+        //    objects[2] = obj.GetType().FullName;
+        //    objects[3] = json;
+        //    bf.Serialize(fs, objects);
 
-            fs.Close();
-        }
+        //    fs.Close();
+        //}
 
         // check that two objects are of the same type
         public static T GetSameType<T, K>(T object1, K object2) where T : class

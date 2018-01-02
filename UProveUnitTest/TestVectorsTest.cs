@@ -39,7 +39,7 @@ using UProveCrypto.PolyProof;
 namespace UProveCryptoTest
 {
     [TestClass]
-    [DeploymentItem(@"TestVectorData\", "TestVectorData")]
+    //[DeploymentItem(@"TestVectorData\", "TestVectorData")]
 
     public class TestVectorsTest
     {
@@ -322,7 +322,8 @@ namespace UProveCryptoTest
                             int[] disclosed = new int[] { };
                             if (vectors.ContainsKey("D") && vectors["D"].Length > 0)
                             {
-                                disclosed = Array.ConvertAll<string, int>(vectors["D"].Split(','), new Converter<string, int>(stringToInt));
+                                //disclosed = Array.ConvertAll<string, int>(vectors["D"].Split(','), new Converter<string, int>(stringToInt));
+                                disclosed = vectors["D"].Split(',').Select(int.Parse).ToArray();
                             }
                             int[] undisclosed = new int[5 - disclosed.Length];
                             int dIndex = 0, uIndex = 0;
@@ -340,7 +341,8 @@ namespace UProveCryptoTest
                             int[] committed = new int[] { };
                             if (vectors.ContainsKey("C") && vectors["C"].Length > 0)
                             {
-                                committed = Array.ConvertAll<string, int>(vectors["C"].Split(','), new Converter<string, int>(stringToInt));
+                                //committed = Array.ConvertAll<string, int>(vectors["C"].Split(','), new Converter<string, int>(stringToInt));
+                                committed = vectors["C"].Split(',').Select(int.Parse).ToArray();
                             }
                             byte[] m = HexToBytes(vectors["m"]);
                             byte[] md = HexToBytes(vectors["md"]);

@@ -324,7 +324,9 @@ namespace UProveUnitTest
         }
         
         private GroupType[] groupConstructions = { GroupType.Subgroup, GroupType.ECC };
-        private string[] supportedHashFunctions = { "SHA256", "SHA512" };
+        //private string[] supportedHashFunctions = { "SHA256", "SHA512" };
+        private string[] supportedHashFunctions = { "SHA256" };
+        private bool[] deviceSupported = { false, true };
         [TestMethod]
         public void TestEndToEnd()
         {
@@ -340,7 +342,8 @@ namespace UProveUnitTest
                         //Console.WriteLine("NumberOfAttribs = " + numberOfAttribs);
                         for (int e = 0; e <= 1; e++)
                         {
-                            foreach (bool supportDevice in new bool[] { false, true })
+                            //foreach (bool supportDevice in new bool[] { false, true })
+                            foreach (bool supportDevice in deviceSupported)
                             {
                                 // Issuer setup
                                 IssuerSetupParameters isp = new IssuerSetupParameters();

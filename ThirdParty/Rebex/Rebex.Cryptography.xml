@@ -1,0 +1,1900 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rebex.Cryptography</name>
+    </assembly>
+    <members>
+        <member name="T:Rebex.Legacy.Cryptography.Aes">
+            <summary>
+            Represents Advanced Encryption Standard (AES) algortithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Aes.Create">
+            <summary>
+            Creates implementation of AES algorithm.
+            </summary>
+            <returns>Concrete implementation of AES algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Aes.Create(System.String)">
+            <summary>
+            Creates implementation of AES named as <paramref name="algName"/> name.
+            </summary>
+            <param name="algName">Name of AES implementation.</param>
+            <returns>If the name is valid, returns AES implementation; otherwise null.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Aes.#ctor">
+            <summary>
+            Initializes AES symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Aes.CreateDecryptor">
+            <summary>
+            Creates a symmetric decryptor object.
+            </summary>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.AesCryptoServiceProvider">
+            <summary>
+            Implements Advanced Encryption Standard (AES) algortithm only, it does not implement CryptoServiceProvider functionality.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesCryptoServiceProvider.#ctor">
+            <summary>
+            Creates AES implementation instance.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesCryptoServiceProvider.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object with provided key and initialization vector.
+            </summary>
+            <param name="rgbKey">Key used in decrypt operation.</param>
+            <param name="rgbIV">Initialization vector used in decrypt operation.</param>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesCryptoServiceProvider.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object with provided key and initialization vector.
+            </summary>
+            <param name="rgbKey">Key used in encrypt operation.</param>
+            <param name="rgbIV">Initialization vector used in encrypt operation.</param>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesCryptoServiceProvider.GenerateKey">
+            <summary>
+            Generates key into this instance <see cref="!:Key"/> property.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesCryptoServiceProvider.GenerateIV">
+            <summary>
+            Generates initialization vector into this instance <see cref="!:IV"/> property.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.AesManaged">
+            <summary>
+            Implements Advanced Encryption Standard (AES) algortithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesManaged.#ctor">
+            <summary>
+            Creates AES implementation instance.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesManaged.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object with provided key and initialization vector.
+            </summary>
+            <param name="rgbKey">Key used in decrypt operation.</param>
+            <param name="rgbIV">Initialization vector used in decrypt operation.</param>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesManaged.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object with provided key and initialization vector.
+            </summary>
+            <param name="rgbKey">Key used in encrypt operation.</param>
+            <param name="rgbIV">Initialization vector used in encrypt operation.</param>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesManaged.GenerateKey">
+            <summary>
+            Generates key into this instance <see cref="!:Key"/> property.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AesManaged.GenerateIV">
+            <summary>
+            Generates initialization vector into this instance <see cref="!:IV"/> property.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.AsymmetricAlgorithm">
+            <summary>
+            Represents the abstract base class from which all implementations of asymmetric algorithms must inherit.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.KeySizeValue">
+            <summary>
+            Represents the size, in bits, of the key modulus used by the asymmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.LegalKeySizesValue">
+            <summary>
+            Specifies the key sizes that are supported by the asymmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebex.Legacy.Cryptography.AsymmetricAlgorithm"/> class.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.KeyExchangeAlgorithm">
+            <summary>
+            Gets the name of key exchange algorithm.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.KeySize">
+            <summary>
+            Gets or sets the size, in bits, of the key modulus used by the asymmetric algorithm.
+            </summary>
+            <value>The size, in bits, of the key modulus used by the asymmetric algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.LegalKeySizes">
+            <summary>
+            Gets the key sizes that are supported by the asymmetric algorithm.
+            </summary>
+            <value>An array that contains the key sizes supported by the asymmetric algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm">
+            <summary>
+            Gets the name of signature algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.Create">
+            <summary>
+            Creates asymmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.Create(System.String)">
+            <summary>
+            Creates asymmetric algorithm.
+            </summary>
+            <param name="algName">Algoritm name.</param>
+            <returns>Created asymmetric algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.Clear">
+            <summary>
+            Releases all resources used by the <see cref="T:Rebex.Legacy.Cryptography.AsymmetricAlgorithm"/> class.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.Dispose(System.Boolean)">
+            <summary>
+            When overridden in a derived class, releases the unmanaged resources
+            used by the <see cref="T:Rebex.Legacy.Cryptography.AsymmetricAlgorithm"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.FromXmlString(System.String)">
+            <summary>
+            Loads asymmetric algorithm fields from xml string. 
+            </summary>
+            <param name="xmlString"></param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.AsymmetricAlgorithm.ToXmlString(System.Boolean)">
+            <summary>
+            Saves asymmetric algorithm fields to xml string.
+            </summary>
+            <param name="includePrivateParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.CryptoConfig">
+            <summary>
+            Provides methods for manipulating algorithms names and its OIDs.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoConfig.EncodeOID(System.String)">
+            <summary>
+            Returns DER representation of algorithm OID.
+            </summary>
+            <param name="str">Algorithm OID.</param>
+            <returns>DER representation of provided OID.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoConfig.MapNameToOID(System.String)">
+            <summary>
+            Maps algorithm name to its OID.
+            </summary>
+            <param name="name">Algorithm name.</param>
+            <returns>OID in string dotted format; or null if the name is not recognized.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.CryptographicException">
+            <summary>
+            Exception that occurs in cryptographic classes.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptographicException.#ctor(System.String)">
+            <summary>
+            Creates CryptographicException instance.
+            </summary>
+            <param name="message">Message of excption.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptographicException.#ctor(System.String,System.Object[])">
+            <summary>
+            Creates CryptographicException instance.
+            </summary>
+            <param name="format">Message text of excption.</param>
+            <param name="args">Arguments of message text.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptographicException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates CryptographicException instance.
+            </summary>
+            <param name="message">Message of exception.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.CryptographicUnexpectedOperationException">
+            <summary>
+            Represents unexpected operation in cryptographic classes.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptographicUnexpectedOperationException.#ctor(System.String)">
+            <summary>
+            Creates CryptographicUnexpectedOperationException instance.
+            </summary>
+            <param name="message">Message of exception.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptographicUnexpectedOperationException.#ctor(System.String,System.Object[])">
+            <summary>
+            Creates CryptographicException instance.
+            </summary>
+            <param name="format">Message text of excption.</param>
+            <param name="args">Arguments of message text.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptographicUnexpectedOperationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates CryptographicException instance.
+            </summary>
+            <param name="message">Message of exception.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.CryptoStreamMode">
+            <summary>
+            Mode of <see cref="T:Rebex.Legacy.Cryptography.CryptoStream"/>.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.CryptoStreamMode.Read">
+            <summary>
+            Reading mode.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.CryptoStreamMode.Write">
+            <summary>
+            Writing mode.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.CryptoStream">
+            <summary>
+            Provides cryptographic transformation of stream data.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.#ctor(System.IO.Stream,Rebex.Legacy.Cryptography.ICryptoTransform,Rebex.Legacy.Cryptography.CryptoStreamMode)">
+            <summary>
+            Creates CryptoStream instance.
+            </summary>
+            <param name="stream">Base stream for writing to or reading from.</param>
+            <param name="transform">Cryptographic transformation object used by this instance.</param>
+            <param name="mode">Reading or writing mode.</param>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.CryptoStream.CanRead">
+            <summary>
+            Gets if this stream can be read from.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.CryptoStream.CanSeek">
+            <summary>
+            Gets if this stream supports seeking.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.CryptoStream.CanWrite">
+            <summary>
+            Gets if it is possible to write to this stream.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.CryptoStream.HasFlushedFinalBlock">
+            <summary>
+            Gets if final block was transformed.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.CryptoStream.Length">
+            <summary>
+            Gets stream length.
+            </summary>
+            <remarks>
+            This property is not supported.
+            </remarks>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.CryptoStream.Position">
+            <summary>
+            Gets position in the stream.
+            </summary>
+            <remarks>
+            This property is not supported.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Seek position in the stream.
+            </summary>
+            <param name="offset">A byte offset relative to <paramref name="origin"/> parameter.</param>
+            <param name="origin">The reference point to get new position</param>
+            <returns>This method is not supported.</returns>
+            <remarks>
+            This method is not supported.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.SetLength(System.Int64)">
+            <summary>
+            Sets the length of the stream.
+            </summary>
+            <param name="value">New length of the stream.</param>
+            <remarks>
+            This method is not supported.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.Flush">
+            <summary>
+            This method is not meaningful for this class.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequecne of bytes to the buffer.
+            </summary>
+            <param name="buffer">Array of bytes to get the bytes read.</param>
+            <param name="offset">Offset in the buffer.</param>
+            <param name="count">Maximum bytes to be read.</param>
+            <returns>Number of bytes actually read.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a sequecne of bytes to the stream.
+            </summary>
+            <param name="buffer">A byte array containing data to write.</param>
+            <param name="offset">Offset in the buffer.</param>
+            <param name="count">Number of bytes to write.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.CryptoStream.FlushFinalBlock">
+            <summary>
+            Transforms final block. It is called as and of writing to the stream.
+            </summary>
+            <remarks>
+            There is no need to call this method manualy because if the stream is closed (Disposed) this method is called automaticaly.
+            </remarks>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.DeriveBytes">
+            <summary>
+            Represents the abstract base class from which all classes that derive byte sequences of a specified length inherit.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DeriveBytes.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebex.Legacy.Cryptography.DeriveBytes"/> class.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DeriveBytes.GetBytes(System.Int32)">
+            <summary>
+            Returns derived bytes.
+            </summary>
+            <param name="cb">The number of bytes to return.</param>
+            <returns>Array of generated bytes.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DeriveBytes.Reset">
+            <summary>
+            Resets the state of the operation.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.DES">
+            <summary>
+            Defines Data Encryption Standard (DES) algorithm algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DES.Create">
+            <summary>
+            Creates default implementation of Data Encryption Standard (DES) algorithm algorithm.
+            </summary>
+            <returns>Default DES implementation.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DES.IsSemiWeakKey(System.Byte[])">
+            <summary>
+            Checks whether the provided key is a semi weak key.
+            </summary>
+            <param name="rgbKey">The key to check.</param>
+            <returns>If it is semi weak key, return true; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DES.IsWeakKey(System.Byte[])">
+            <summary>
+            Checks whether the provided key is a weak key.
+            </summary>
+            <param name="rgbKey">The key to check.</param>
+            <returns>If it is weak key, return true; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DES.#ctor">
+            <summary>
+            Initializes DES symmetric algorithm.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.DESCryptoServiceProvider">
+            <summary>
+            This is only Data Encryption Standard (DES) algorithm implementation, it does not provide CryptoServiceProvider functionality.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DESCryptoServiceProvider.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object.
+            </summary>
+            <param name="rgbKey">The key for the decryptor object.</param>
+            <param name="rgbIV">The initial vector (IV) for the decryptor object.</param>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DESCryptoServiceProvider.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object.
+            </summary>
+            <param name="rgbKey">The key for the encryptor object.</param>
+            <param name="rgbIV">The initial vector (IV) for the encryptor object.</param>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DESCryptoServiceProvider.GenerateKey">
+            <summary>
+            Generates key into the <see cref="!:Key"/> property.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DESCryptoServiceProvider.GenerateIV">
+            <summary>
+            Generates initial vector (IV) into the <see cref="!:IV"/> property.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.DSAParameters">
+            <summary>
+            Represents the standard parameters for the DSA algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.P">
+            <summary>Represents the P parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.Q">
+            <summary>Represents the Q parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.G">
+            <summary>Represents the G parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.Y">
+            <summary>Represents the Y parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.J">
+            <summary>Represents the J parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.X">
+            <summary>Represents the X parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.Seed">
+            <summary>Specifies the seed for the DSA algorithm.</summary>		
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.DSAParameters.Counter">
+            <summary>Specifies the counter for the DSA algorithm.</summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.DSA">
+            <summary>
+            Represents the base class from which all implementations of the DSA algorithm must inherit.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.Create">
+            <summary>
+            Creates default implementation of DSA algorithm.
+            </summary>
+            <returns>Default DSA algorithm implementation.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.Create(System.String)">
+            <summary>
+            Returns implementation of DSA algorithm if the name corresponds to known implementation.
+            </summary>
+            <param name="algName">Name of class which implements DSA algorithm.</param>
+            <returns>Implementation of DSA algorithm if the name corresponds to known implementation; 
+            otherwise returns null.</returns>
+            <exception cref="T:System.InvalidCastException">If provided name reference to known class but this class is not castable to <see cref="T:Rebex.Legacy.Cryptography.DSA"/> class.</exception>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.ImportParameters(Rebex.Legacy.Cryptography.DSAParameters)">
+            <summary>
+            Imports the specified <see cref="T:Rebex.Legacy.Cryptography.DSAParameters"/>.
+            </summary>
+            <param name="param">The DSA parameters.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.ExportParameters(System.Boolean)">
+            <summary>
+            Exports the <see cref="T:Rebex.Legacy.Cryptography.DSAParameters"/>.
+            </summary>
+            <param name="includePrivateParameters">true to include private parameters; otherwise, false.</param>
+            <returns>The DSA parameters.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.CreateSignature(System.Byte[])">
+            <summary>
+            Creates the DSA signature for the specified data.
+            </summary>
+            <param name="rgbHash">The SHA1 hash of data to be signed.</param>
+            <returns>The DSA signature for the specified hash value.</returns>
+            <remarks>
+            DSA signature is a pair of numbers r and s.
+            This method always returns an array of 40 bytes.
+            Bytes 0..19 contain the value of r, bytes 20..39 contain the value of s.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.VerifySignature(System.Byte[],System.Byte[])">
+            <summary>
+            Verifies the DSA signature for the specified data.
+            </summary>
+            <param name="rgbHash">The SHA1 hash of signed data to be verified.</param>
+            <param name="rgbSignature">The signature to be verified for rgbData.</param>
+            <returns>true if the signature verifies as valid; otherwise, false.</returns>
+            <remarks>
+            DSA signature is a pair of numbers r and s.
+            The rgbSignature parameter must be 40 bytes long.
+            Bytes 0..19 must contain the value of r, bytes 20..39 must contain the value of s.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.FromXmlString(System.String)">
+            <summary>
+            Initialize this instance with DSA parameters stored in XML string.
+            </summary>
+            <param name="xmlString">DSA parameters in XML string.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSA.ToXmlString(System.Boolean)">
+            <summary>
+            Gets DSA parameters stored in XML string.
+            </summary>
+            <param name="includePrivateParameters">True to include private DSA parameters; otherwise false.</param>
+            <returns>XML string with stored DSA parameters.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.DSACryptoServiceProvider">
+            <summary>
+            Implements DSA asymmetric algorithm.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.PublicOnly">
+            <summary>
+            Gets a value indicating whether this instance only contains the public key.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.KeyExchangeAlgorithm">
+            <summary>
+            Gets the name of key exchange algorithm.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.SignatureAlgorithm">
+            <summary>
+            Gets the name of signature algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.#ctor">
+            <summary>
+            Creates a new instance of DSACryptoServiceProvder.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.#ctor(System.Int32)">
+            <summary>
+            Creates a new instance of DSACryptoServiceProvder with the specified key size.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.SignData(System.Byte[])">
+            <summary>
+            Signs provided data with private key.
+            </summary>
+            <param name="rgbData">Data to sign.</param>
+            <returns>Signature for provided data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.SignData(System.IO.Stream)">
+            <summary>
+            Signs provided data with private key.
+            </summary>
+            <param name="rgbData">Data to sign.</param>
+            <returns>Signature for provided data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.SignData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Signs provided part of data with private key.
+            </summary>
+            <param name="buffer">Buffer containing data to sign.</param>
+            <param name="offset">Index where the data begins.</param>
+            <param name="count">Count of bytes to sign.</param>
+            <returns>Signature for provided data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.SignHash(System.Byte[],System.String)">
+            <summary>
+            Signs hash with hash algorithm.
+            </summary>
+            <param name="rgbHash">Hash to sign.</param>
+            <param name="str">Hash algorithm name.</param>
+            <returns>Signature for provided hash.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.VerifyData(System.Byte[],System.Byte[])">
+            <summary>
+            Verifies provided data with signature.
+            </summary>
+            <param name="rgbData">Data to verify.</param>
+            <param name="rgbSignature">Signature of data.</param>
+            <returns>True if signature is for provided data; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.VerifyHash(System.Byte[],System.String,System.Byte[])">
+            <summary>
+            Verifies hash against signature created with hash algorithm.
+            </summary>
+            <param name="rgbHash">Hash to verify.</param>
+            <param name="str">Hash algorithm name.</param>
+            <param name="rgbSignature">Hash signature.</param>
+            <returns>If it is verified, returns true; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.VerifySignature(System.Byte[],System.Byte[])">
+            <summary>
+            Verifies hash againts signature.
+            </summary>
+            <param name="rgbHash">Hash to verify.</param>
+            <param name="rgbSignature">Signature used in verifying process.</param>
+            <returns>True if the hash was verified; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.CreateSignature(System.Byte[])">
+            <summary>
+            Creates signature for the hash.
+            </summary>
+            <param name="rgbHash">Hash that need to be signed.</param>
+            <returns>Signature of the hash.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.ImportParameters(Rebex.Legacy.Cryptography.DSAParameters)">
+            <summary>
+            Imports DSA parameters to the instance.
+            </summary>
+            <param name="parameters">Parameters of the DSA algorithm.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.DSACryptoServiceProvider.ExportParameters(System.Boolean)">
+            <summary>
+            Exports DSA parameters from this instance.
+            </summary>
+            <param name="includePrivateParameters">True to include private parameters; otherwise false.</param>
+            <returns>DSA parameters of this instance.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.PaddingMode">
+            <summary>
+            Specifies the type of padding to apply when the message data block is shorter
+            than the full number of bytes needed for a cryptographic operation.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.PaddingMode.None">
+            <summary>No padding is done.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.PaddingMode.PKCS7">
+            <summary>The PKCS #7 padding string consists of a sequence of bytes, each of which is equal to the total number of padding bytes added.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.PaddingMode.Zeros">
+            <summary>The padding string consists of bytes set to zero.</summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.CipherMode">
+            <summary>
+            Specifies the block cipher mode to use for encryption.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.CipherMode.CBC">
+            <summary>
+            The Cipher Block Chaining (CBC) mode.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.CipherMode.ECB">
+            <summary>
+            The Electronic Codebook (ECB) mode encrypts each block individually.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.CipherMode.OFB">
+            <summary>
+            The Output Feedback (OFB) mode.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.HashAlgorithm">
+            <summary>
+            Represents the base class from which all implementations of cryptographic hash algorithms must derive.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.HashAlgorithm.HashSizeValue">
+            <summary>
+            Represents the size, in bits, of the computed hash code.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.HashAlgorithm.HashValue">
+            <summary>
+            Represents the value of the computed hash code.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.HashAlgorithm.State">
+            <summary>
+            Represents the state of the hash computation.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.Create">
+            <summary>
+            Creates default implementation of hash algorithm.
+            </summary>
+            <returns>Default implementation of hash algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.Create(System.String)">
+            <summary>
+            Returns implementation of hash algorithm if the name corresponds to known implementation.
+            </summary>
+            <param name="algName">Name of class which implements hash algorithm.</param>
+            <returns>Implementation of hash algorithm if the name corresponds to known implementation; 
+            otherwise returns null.</returns>
+            <exception cref="T:System.InvalidCastException">If provided name reference to known class but this class is not castable to <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> class.</exception>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> class.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.Clear">
+            <summary>
+            Releases all resources used by the <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> class.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Routes data written to the object into the hash algorithm for computing the hash. 
+            </summary>
+            <param name="array">The input to compute the hash code for.</param>
+            <param name="ibStart">The offset into the byte array from which to begin using data.</param>
+            <param name="cbSize">The number of bytes in the byte array to use as data.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.HashFinal">
+            <summary>
+            Finalizes the hash computation after the last data is processed by the cryptographic stream object.
+            </summary>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.ComputeHash(System.IO.Stream)">
+            <summary>
+            Computes the hash value for the specified <see cref="T:System.IO.Stream"/> object.
+            </summary>
+            <param name="inputStream">The input to compute the hash code for.</param>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.ComputeHash(System.Byte[])">
+            <summary>
+            Computes the hash value for the specified byte array.
+            </summary>
+            <param name="buffer">The input to compute the hash code for.</param>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.ComputeHash(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Computes the hash value for the specified region of the specified byte array.
+            </summary>
+            <param name="buffer">The input to compute the hash code for.</param>
+            <param name="offset">The offset into the byte array from which to begin using data.</param>
+            <param name="count">The number of bytes in the array to use as data.</param>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Computes the hash value for the specified region of the input byte array and copies the resulting hash value to the specified region of the output byte array.
+            </summary>
+            <param name="inputBuffer">The input to compute the hash code for.</param>
+            <param name="inputOffset">The offset into the input byte array from which to begin using data.</param>
+            <param name="inputCount">The number of bytes in the input byte array to use as data.</param>
+            <param name="outputBuffer">A copy of the part of the input array used to compute the hash code.</param>
+            <param name="outputOffset">The offset into the output byte array from which to begin writing data.</param>
+            <returns>The number of bytes written.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Computes the hash value for the specified region of the specified byte array.
+            </summary>
+            <param name="inputBuffer">The input to compute the hash code for.</param>
+            <param name="inputOffset">The offset into the input byte array from which to begin using data.</param>
+            <param name="inputCount">The number of bytes in the input byte array to use as data.</param>
+            <returns>An array that is a copy of the part of the input that is hashed.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HashAlgorithm.Initialize">
+            <summary>
+            Initializes an implementation of the <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> class. 
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.HashAlgorithm.Hash">
+            <summary>
+            Gets the value of the computed hash code.
+            </summary>
+            <value>The current value of the computed hash code.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.HashAlgorithm.HashSize">
+            <summary>
+            Gets the size, in bits, of the computed hash code.
+            </summary>
+            <value>The size, in bits, of the computed hash code.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.HashAlgorithm.InputBlockSize">
+            <summary>
+            Gets the input block size. 
+            </summary>
+            <value>The input block size.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.HashAlgorithm.OutputBlockSize">
+            <summary>
+            Gets the output block size. 
+            </summary>
+            <value>The output block size.</value>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.HMAC">
+            <summary>
+            Represents Hash-based Message Authentication Code algortihm.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.HMAC.HashName">
+            <summary>
+            Gets or sets the hash name used in hash computation.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.HMACMD5">
+            <summary>
+            Implements Hash-based Message Authentication Code using MD5 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.HMACMD5.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.ICryptoTransform">
+            <summary>
+            Defines the basic operations of cryptographic transformations.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.ICryptoTransform.TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Transforms the specified region of the input byte array and copies the resulting transform to the specified region of the output byte array.
+            </summary>
+            <param name="inputBuffer">The input for which to compute the transform.</param>
+            <param name="inputOffset">The offset into the input byte array from which to begin using data.</param>
+            <param name="inputCount">The number of bytes in the input byte array to use as data.</param>
+            <param name="outputBuffer">The output to which to write the transform.</param>
+            <param name="outputOffset">The offset into the output byte array from which to begin writing data.</param>
+            <returns>The number of bytes written.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.ICryptoTransform.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Transforms the specified region of the specified byte array.
+            </summary>
+            <param name="inputBuffer">The input for which to compute the transform.</param>
+            <param name="inputOffset">The offset into the input byte array from which to begin using data.</param>
+            <param name="inputCount">The number of bytes in the input byte array to use as data.</param>
+            <returns>The computed transform.</returns>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.ICryptoTransform.InputBlockSize">
+            <summary>
+            Gets the input block size.
+            </summary>
+            <value>The size of the input data blocks in bytes.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.ICryptoTransform.OutputBlockSize">
+            <summary>
+            Gets the output block size.
+            </summary>
+            <value>The size of the output data blocks in bytes.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.ICryptoTransform.CanReuseTransform">
+            <summary>
+            Gets if this object can be reused in transformations.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.ICryptoTransform.CanTransformMultipleBlocks">
+            <summary>
+            Gets if this object can transform multiple blocks.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.KeyedHashAlgorithm">
+            <summary>
+            Represents the abstract class from which all implementations of keyed hash algorithms must derive.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.KeyedHashAlgorithm.KeyValue">
+            <summary>
+            The key to use in the hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.KeyedHashAlgorithm.Create">
+            <summary>
+            Creates default implementation of KeyedHashAlgorithm. 
+            </summary>
+            <returns>Implementation of KeyedHashAlgorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.KeyedHashAlgorithm.Create(System.String)">
+            <summary>
+            Creates implementation of KeyedHashAlgorithm with provided name.
+            </summary>
+            <param name="algName">KeyedHashAlgorithm name.</param>
+            <returns>Implementation of KeyedHashAlgorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.KeyedHashAlgorithm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebex.Legacy.Cryptography.KeyedHashAlgorithm"/> class. 
+            </summary>
+            <remarks>
+            You cannot create an instance of an abstract class.
+            Create an instance of a derived class instead.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.KeyedHashAlgorithm.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Rebex.Legacy.Cryptography.KeyedHashAlgorithm"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.KeyedHashAlgorithm.Key">
+            <summary>
+            Gets or sets the key to use in the hash algorithm.
+            </summary>
+            <value>The key to use in the hash algorithm.</value>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.KeySizes">
+            <summary>
+            Determines the set of valid key sizes for a symmetric cryptographic algorithm. 
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.KeySizes.MinSize">
+            <summary>
+            Specifies the minimum key size in bits.
+            </summary>
+            <value>The minimum key size in bits.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.KeySizes.MaxSize">
+            <summary>
+            Specifies the maximum key size in bits.
+            </summary>
+            <value>The maximum key size in bits.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.KeySizes.SkipSize">
+            <summary>
+            Specifies the interval between valid key sizes in bits.
+            </summary>
+            <value>The interval between valid key sizes in bits.</value>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.KeySizes.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebex.Legacy.Cryptography.KeySizes"/> class with the specified key values. 
+            </summary>
+            <param name="minSize">The minimum valid key size.</param> 
+            <param name="maxSize">The maximum valid key size.</param>
+            <param name="skipSize">The interval between valid key sizes.</param>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.MD5">
+            <summary>
+            Base class for MD5 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.MD5.#ctor">
+            <summary>
+            Initializes hash algorithm as MD5 algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.MD5.Create">
+            <summary>
+            Creates default implementation of MD5 hash algorithm.
+            </summary>
+            <returns>Implementation of MD5 hash algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.MD5.Create(System.String)">
+            <summary>
+            Create implementation of MD5 hash algorithm with the provided name.
+            </summary>
+            <param name="algName">MD5 hash algorithm name.</param>
+            <returns>Implementation of MD5 hash algorithm.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.MD5CryptoServiceProvider">
+            <summary>
+            Provides functionality for MD5 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.MD5CryptoServiceProvider.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.PasswordDeriveBytes">
+            <summary>
+            Provides functionality for deriving key in PBKDF1 form.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.PasswordDeriveBytes.HashName">
+            <summary>
+            Gets or sets the hash name used in key derivation.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.PasswordDeriveBytes.IterationCount">
+            <summary>
+            Gets or sets the iteration count used in key derivation.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.PasswordDeriveBytes.Salt">
+            <summary>
+            Gets or sets the salt used in key derivation.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.#ctor(System.Byte[],System.Byte[])">
+            <summary>
+            Initializes new instace.
+            </summary>
+            <param name="password">Password for key derivation.</param>
+            <param name="salt">Salt used in key derivation.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.#ctor(System.String,System.Byte[])">
+            <summary>
+            Initializes new instance.
+            </summary>
+            <param name="strPassword">Password for key derivation.</param>
+            <param name="rgbSalt">Salt used in key derivation.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.#ctor(System.Byte[],System.Byte[],System.String,System.Int32)">
+            <summary>
+            Initializes new instance.
+            </summary>
+            <param name="password">Password for key derivation.</param>
+            <param name="salt">Salt used in key derivation.</param>
+            <param name="hashName">Name of hash algorithm used in key derivation.</param>
+            <param name="iterations">Iterations used in key derivation.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.#ctor(System.String,System.Byte[],System.String,System.Int32)">
+            <summary>
+            Initializes new instance.
+            </summary>
+            <param name="strPassword">Password for key derivation.</param>
+            <param name="rgbSalt">Salt used in key derivation.</param>
+            <param name="strHashName">Name of hash algorithm used in key derivation.</param>
+            <param name="iterations">Iterations used in key derivation.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.GetBytes(System.Int32)">
+            <summary>
+            Gets next count of pseudo-random bytes.
+            </summary>
+            <param name="cb">Bytes count to get.</param>
+            <returns>Array of bytes containing pseudo-random bytes. The length is equal to <paramref name="cb"/> value.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.Reset">
+            <summary>
+            Resets the derivation to initial values passed by constructor.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.PasswordDeriveBytes.CryptDeriveKey(System.String,System.String,System.Int32,System.Byte[])">
+            <summary>
+            Derives key for algorithm using key and IV.
+            </summary>
+            <param name="algname">Name of algorithm which the key is derived to.</param>
+            <param name="alghashname">Hash algorithm used in derivation process.</param>
+            <param name="keySize">The size of returned key in bits. It must be valid key size to <paramref name="algname"/> algorithm.</param>
+            <param name="rgbIV">The IV used in derivation.</param>
+            <returns>Derived key.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RandomNumberGenerator">
+            <summary>
+            Base class for pseudo-random number generators.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RandomNumberGenerator.Create">
+            <summary>
+            Creates default implementation of generator of random numbers.
+            </summary>
+            <returns>RandomNumberGenerator default instance.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RandomNumberGenerator.Create(System.String)">
+            <summary>
+            Creates implementatation of generator of random numbers with provided name.
+            </summary>
+            <param name="rngName">Name of RandomNumberGenerator implementation.</param>
+            <returns>RandomNumberGenerator instance.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RandomNumberGenerator.GetBytes(System.Byte[])">
+            <summary>
+            Fills array of bytes with pseudo-random bytes.
+            </summary>
+            <param name="input">Array of bytes to fill.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RandomNumberGenerator.GetNonZeroBytes(System.Byte[])">
+            <summary>
+            Fills array of bytes with pseudo-random nonzero bytes.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RC2">
+            <summary>
+            Defines RC2 symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2.Create">
+            <summary>
+            Creates default implementation of RC2 algorithm.
+            </summary>
+            <returns>Default RC2 implementation.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2.Create(System.String)">
+            <summary>
+            Creates implementation of RC2 algorithm with the provided name.
+            </summary>
+            <param name="algName">RC2 implementation name.</param>
+            <returns>The RC2 implementation.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2.#ctor">
+            <summary>
+            Initializes RC2 algorithm.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RC2CryptoServiceProvider">
+            <summary>
+            This is only RC2 algorithm implementation, it does not provide CryptoServiceProvider functionality.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2CryptoServiceProvider.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object.
+            </summary>
+            <param name="rgbKey">The key for the decryptor object.</param>
+            <param name="rgbIV">The initial vector (IV) for the decryptor object.</param>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2CryptoServiceProvider.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object.
+            </summary>
+            <param name="rgbKey">The key for the encryptor object.</param>
+            <param name="rgbIV">The initial vector (IV) for the encryptor object.</param>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2CryptoServiceProvider.GenerateKey">
+            <summary>
+            Generates key into the <see cref="!:Key"/> property.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RC2CryptoServiceProvider.GenerateIV">
+            <summary>
+            Generates initial vector (IV) into the <see cref="!:IV"/> property.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes">
+            <summary>
+            Implements password-based key derivation as specified in RFC 2898.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.IterationCount">
+            <summary>
+            Gets or sets iteration count of derivation process.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.Salt">
+            <summary>
+            Gets or sets key salt of derivation process.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Byte[])">
+            <summary>
+            Initialize a new instance using password and salt.
+            </summary>
+            <param name="password">Password to use in derivation.</param>
+            <param name="salt">Salt to use in derivation.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Int32)">
+            <summary>
+            Initialize a new instance using password and salt size.
+            </summary>
+            <param name="password">Password to use in derivation.</param>
+            <param name="saltSize">Size of salt</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.#ctor(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Initialize a new instatce using password, salt and iteration count.
+            </summary>
+            <param name="password">Password to use in derivation.</param>
+            <param name="salt">Salt to use in derivation.</param>
+            <param name="iterations">Derivation iteration count.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Initialize a new instatce using password, salt and iteration count.
+            </summary>
+            <param name="password">Password to use in derivation.</param>
+            <param name="salt">Salt to use in derivation.</param>
+            <param name="iterations">Derivation iteration count.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initialize a new instatce using password, salt size and iteration count.
+            </summary>
+            <param name="password">Password to use in derivation.</param>
+            <param name="salt">Size of salt.</param>
+            <param name="iterations">Derivation iteration count.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.GetBytes(System.Int32)">
+            <summary>
+            Returns derived bytes.
+            </summary>
+            <param name="cb">The number of bytes to return.</param>
+            <returns>Array of generated bytes.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rfc2898DeriveBytes.Reset">
+            <summary>
+            Resets the state of the operation.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.Rijndael">
+            <summary>
+            Defines Rijndael symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rijndael.Create">
+            <summary>
+            Creates default implementation of Rijndael algorithm.
+            </summary>
+            <returns>Default implementation of Rijndael algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rijndael.Create(System.String)">
+            <summary>
+            Creates implementation of Rijndael algorithm with provided name.
+            </summary>
+            <param name="algName">Rijndael implementation name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.Rijndael.#ctor">
+            <summary>
+            Initializes Rijndael symmetric algorithm.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RijndaelManaged">
+            <summary>
+            The Rijndael algorithm implementation.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RijndaelManaged.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object.
+            </summary>
+            <param name="rgbKey">The key for the decryptor object.</param>
+            <param name="rgbIV">The initial vector (IV) for the decryptor object.</param>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RijndaelManaged.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object.
+            </summary>
+            <param name="rgbKey">The key for the encryptor object.</param>
+            <param name="rgbIV">The initial vector (IV) for the encryptor object.</param>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RijndaelManaged.GenerateKey">
+            <summary>
+            Generates key into the <see cref="!:Key"/> property.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RijndaelManaged.GenerateIV">
+            <summary>
+            Generates initial vector (IV) into the <see cref="!:IV"/> property.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RNGCryptoServiceProvider">
+            <summary>
+            Implements pseudo-random number generation algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RNGCryptoServiceProvider.#ctor">
+            <summary>
+            Creates new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RSAParameters">
+            <summary>
+            Represents the standard parameters for the RSA algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.Exponent">
+            <summary>Represents the Exponent parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.Modulus">
+            <summary>Represents the Modulus parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.P">
+            <summary>Represents the P parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.Q">
+            <summary>Represents the Q parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.DP">
+            <summary>Represents the DP parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.DQ">
+            <summary>Represents the DQ parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.InverseQ">
+            <summary>Represents the InverseQ parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.RSAParameters.D">
+            <summary>Represents the D parameter for the RSA algorithm.</summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RSA">
+            <summary>
+            Represents the base class from which all implementations of the RSA algorithm must inherit.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.Create">
+            <summary>
+            Returns default implementation of RSA asymmetric algorithm.
+            </summary>
+            <returns>Returns default implementation of RSA asymmetric algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.Create(System.String)">
+            <summary>
+            Returns implementation of RSA algorithm if the name corresponds to known implementation.
+            </summary>
+            <param name="algName">Name of class which implements RSA algorithm.</param>
+            <returns>Implementation of RSA algorithm if the name corresponds to known implementation; 
+            otherwise returns null.</returns>
+            <exception cref="T:System.InvalidCastException">If provided name reference to known class but this class is not castable to <see cref="T:Rebex.Legacy.Cryptography.RSA"/> class.</exception>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.#ctor">
+            <summary>
+            Initializes AsymmetricAlgorithm values as RSA algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.ImportParameters(Rebex.Legacy.Cryptography.RSAParameters)">
+            <summary>
+            Imports the specified <see cref="T:Rebex.Legacy.Cryptography.RSAParameters"/>.
+            </summary>
+            <param name="param">The RSA parameters.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.ExportParameters(System.Boolean)">
+            <summary>
+            Exports the <see cref="T:Rebex.Legacy.Cryptography.RSAParameters"/>.
+            </summary>
+            <param name="includePrivateParameters">True to include private parameters; otherwise, false.</param>
+            <returns>The RSA parameters.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.DecryptValue(System.Byte[])">
+            <summary>
+            Decrypts provided data with private key.
+            </summary>
+            <param name="rgb">Data to decrypt.</param>
+            <returns>Decrypted data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.EncryptValue(System.Byte[])">
+            <summary>
+            Encrypts provided data with public key.
+            </summary>
+            <param name="rgb">Data to encryp.</param>
+            <returns>Encrypted data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.FromXmlString(System.String)">
+            <summary>
+            Initialize this instance with RSA parameters stored in XML string.
+            </summary>
+            <param name="xmlString">RSA parameters in XML string.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSA.ToXmlString(System.Boolean)">
+            <summary>
+            Gets RSA parameters stored in XML string.
+            </summary>
+            <param name="includePrivateParameters">True to include private RSA parameters; otherwise false.</param>
+            <returns>XML string with stored RSA parameters.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.RSACryptoServiceProvider">
+            <summary>
+            This is only RSA algorithm implementation, it does not provide CryptoServiceProvider functionality.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.KeyExchangeAlgorithm">
+            <summary>
+            Gets the name of key exchange algorithm.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.SignatureAlgorithm">
+            <summary>
+            Gets the name of signature algorithm.
+            </summary>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.PublicOnly">
+            <summary>
+            Gets a value indicating whether this instance only contains the public key.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.#ctor">
+            <summary>
+            Creates a new instance of RSACryptoServiceProvder.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.#ctor(System.Int32)">
+            <summary>
+            Creates a new instance of RSACryptoServiceProvder with the specified key size.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.ImportParameters(Rebex.Legacy.Cryptography.RSAParameters)">
+            <summary>
+            Imports RSA parameters.
+            </summary>
+            <param name="parameters">Parameters to import.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.ExportParameters(System.Boolean)">
+            <summary>
+            Export RSA parameters.
+            </summary>
+            <param name="includePrivateParameters">True if include private parameters (aka private key); false to include only public parameters.</param>
+            <returns>Exported parameters.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.DecryptValue(System.Byte[])">
+            <summary>
+            This method is not supported in current version.
+            </summary>
+            <param name="rgb">Value to decrypt.</param>
+            <returns>Decryptoed data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.EncryptValue(System.Byte[])">
+            <summary>
+            This method is not supported in current version.
+            </summary>
+            <param name="rgb">Value to encrypt.</param>
+            <returns>Encrypted data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.Encrypt(System.Byte[],System.Boolean)">
+            <summary>
+            Encrypts data using RSA algorithm.
+            </summary>
+            <param name="rgb">Data to encrypt.</param>
+            <param name="fOAEP">True to use OAEP padding, false to use PKCS#1 v1.5 padding.</param>
+            <returns>Encrypted data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.Decrypt(System.Byte[],System.Boolean)">
+            <summary>
+            Decrypt data using RSA algorithm.
+            </summary>
+            <param name="rgb">Data to decrypt.</param>
+            <param name="fOAEP">True to use OAEP padding, false to use PKCS#1 v1.5 padding.</param>
+            <returns>Decrypted data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.SignData(System.Byte[],System.Object)">
+            <summary>
+            Computes hash for data using hash algorithm then signs the produced hash value with private key.
+            </summary>
+            <param name="buffer">Array of bytes containing data to sign.</param>
+            <param name="halg">Hash algorithm object. Can be string, HashAlgorithm derived class instance or Type.</param>
+            <returns>Sign for provided data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.SignData(System.Byte[],System.Int32,System.Int32,System.Object)">
+            <summary>
+            Computes hash for data using hash algorithm then signs the produced hash value with private key.
+            </summary>
+            <param name="buffer">Array of bytes containing data to sign.</param>
+            <param name="offset">Offset at which data starts.</param>
+            <param name="count">The length of data part in the array of bytes.</param>
+            <param name="halg">Hash algorithm object. Can be string, HashAlgorithm derived class instatnce or Type.</param>
+            <returns>Sign for provided data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.SignData(System.IO.Stream,System.Object)">
+            <summary>
+            Computes hash for data using hash algorithm then signs the produced hash value with private key.
+            </summary>
+            <param name="inputStream">Stream containing the data to sign.</param>
+            <param name="halg">Hash algorithm object. Can be string, HashAlgorithm derived class instatnce or Type.</param>
+            <returns>Sign for provided data.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.SignHash(System.Byte[],System.String)">
+            <summary>
+            Signs hash of data with private key.
+            </summary>
+            <param name="rgbHash">Hash to sign.</param>
+            <param name="str">Name of hash algorithm.</param>
+            <returns>Sign for the hash.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.VerifyData(System.Byte[],System.Object,System.Byte[])">
+            <summary>
+            Verifies data in the array of bytes with the signature.
+            </summary>
+            <param name="buffer">Array of bytes containing data to verify.</param>
+            <param name="halg">Hash algorithm object. Can be string, HashAlgorithm derived class instatnce or Type.</param>
+            <param name="signature">Signature of verification.</param>
+            <returns>True if the data are virified; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.RSACryptoServiceProvider.VerifyHash(System.Byte[],System.String,System.Byte[])">
+            <summary>
+            Verify hash of data with the signature.
+            </summary>
+            <param name="rgbHash">Hash to verify.</param>
+            <param name="str">Name of hash algorithm used to computing hash in <paramref name="rgbHash"/> parameter.</param>
+            <param name="rgbSignature">Signature of verification.</param>
+            <returns>True if the data are virified; otherwise false.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA256CryptoServiceProvider">
+            <summary>
+            Implements SHA256 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA256CryptoServiceProvider.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA1">
+            <summary>
+            Represent SHA1 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA1.#ctor">
+            <summary>
+            Initializes new instace of hash algorithm as SHA1.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA1.Create">
+            <summary>
+            Creates default implementation of SHA1 hash algorithm.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA1.Create(System.String)">
+            <summary>
+            Creates implementation of SHA1 hash algorithm with the provided name.
+            </summary>
+            <param name="algName">Name of SHA1 implementation.</param>
+            <returns>SHA1 implementation.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA1CryptoServiceProvider">
+            <summary>
+            Provides implementation of SHA1 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA1CryptoServiceProvider.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA1Managed">
+            <summary>
+            Provides implementation of SHA1 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA1Managed.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA256">
+            <summary>
+            Represents SHA256 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA256.#ctor">
+            <summary>
+            Initializes new instance of hash algorithm as SAH256 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA256.Create">
+            <summary>
+            Creates default implementation of SHA256 hash algorithm.
+            </summary>
+            <returns>Default implementation of SHA256 hash algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA256.Create(System.String)">
+            <summary>
+            Creates implementation of SHA256 hash algorithm with provided name.
+            </summary>
+            <param name="algName">Name of SHA256 implementation.</param>
+            <returns>Implementation of SHA256 algorithm.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA384">
+            <summary>
+            Represents SHA384 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA384.#ctor">
+            <summary>
+            Initializes <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> as SHA384 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA384.Create">
+            <summary>
+            Creates default implementation of SHA384 hash algorithm.
+            </summary>
+            <returns>Default implementation of SHA384 hash algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA384.Create(System.String)">
+            <summary>
+            Creates implementation of SHA384 hash algorithm with provided name.
+            </summary>
+            <param name="algName">Name of the implementation fo SHA384 hash algorithm.</param>
+            <returns>Implementation of SHA384 hash algorithm.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA384CryptoServiceProvider">
+            <summary>
+            Implements SHA384 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA384CryptoServiceProvider.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA512">
+            <summary>
+            Represents SHA512 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA512.#ctor">
+            <summary>
+            Initializes <see cref="T:Rebex.Legacy.Cryptography.HashAlgorithm"/> as SHA512 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA512.Create">
+            <summary>
+            Creates default implementation of SHA512 hash algorithm.
+            </summary>
+            <returns>Default implementation of SHA512 hash algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA512.Create(System.String)">
+            <summary>
+            Creates implementation of SHA512 hash algorithm with provided name.
+            </summary>
+            <param name="algName">Name of SHA512 hash algorithm implementation.</param>
+            <returns>SHA512 hash algorithm implementation.</returns>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA512CryptoServiceProvider">
+            <summary>
+            Implements SHA512 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA512CryptoServiceProvider.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SymmetricAlgorithm">
+            <summary>
+            Represents the abstract base class from which all implementations of symmetric algorithms must inherit.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.BlockSizeValue">
+            <summary>
+            Represents the block size, in bits, of the cryptographic operation.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.FeedbackSizeValue">
+            <summary>
+            Represents the feedback size, in bits, of the cryptographic operation.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.KeySizeValue">
+            <summary>
+            Represents the size, in bits, of the secret key used by the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.IVValue">
+            <summary>
+            Represents the initialization vector (IV) for the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.KeyValue">
+            <summary>
+            Represents the secret key for the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.LegalBlockSizesValue">
+            <summary>
+            Specifies the block sizes that are supported by the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.LegalKeySizesValue">
+            <summary>
+            Specifies the key sizes that are supported by the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.ModeValue">
+            <summary>
+            Represents the cipher mode used in the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="F:Rebex.Legacy.Cryptography.SymmetricAlgorithm.PaddingValue">
+            <summary>
+            Represents the padding mode used in the symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.#ctor">
+            <summary>
+            Initializes a new instance of the SymmetricAlgorithm class.
+            </summary>
+            <remarks>
+            You cannot create an instance of an abstract class.
+            Create an instance of a derived class instead.
+            </remarks>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Create">
+            <summary>
+            Creates default implementation of SymmetricAlgorithm.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Clear">
+            <summary>
+            Releases all resources used by the <see cref="T:Rebex.Legacy.Cryptography.SymmetricAlgorithm"/> class. 
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.CreateDecryptor">
+            <summary>
+            Creates a symmetric decryptor object.
+            </summary>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.CreateEncryptor">
+            <summary>
+            Creates a symmetric encryptor object.
+            </summary>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.CreateDecryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric decryptor object with the specified key and initialization vector. 
+            </summary>
+            <param name="rgbKey">The secret key to use for the symmetric algorithm.</param>
+            <param name="rgbIV">The initialization vector to use for the symmetric algorithm.</param>
+            <returns>A symmetric decryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.CreateEncryptor(System.Byte[],System.Byte[])">
+            <summary>
+            Creates a symmetric encryptor object with the specified key and initialization vector. 
+            </summary>
+            <param name="rgbKey">The secret key to use for the symmetric algorithm.</param>
+            <param name="rgbIV">The initialization vector to use for the symmetric algorithm.</param>
+            <returns>A symmetric encryptor object.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Rebex.Legacy.Cryptography.SymmetricAlgorithm"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Finalize">
+            <summary>
+            <see cref="T:Rebex.Legacy.Cryptography.SymmetricAlgorithm"/> finalizer.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.GenerateKey">
+            <summary>
+            Generates a random key (<see cref="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Key"/>) to use for the algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.GenerateIV">
+            <summary>
+            Generates a random initialization vector (<see cref="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.IV"/>) to use for the algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SymmetricAlgorithm.ValidKeySize(System.Int32)">
+            <summary>
+            Determines whether the specified key size is valid for the current algorithm.
+            </summary>
+            <param name="bitLength">The length, in bits, to check for a valid key size.</param>
+            <returns>true if the specified key size is valid for the current algorithm; otherwise, false.</returns>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.BlockSize">
+            <summary>
+            Gets or sets the block size, in bits, of the cryptographic operation.
+            </summary>
+            <value>The block size, in bits.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.FeedbackSize">
+            <summary>
+            Gets or sets the feedback size, in bits, of the cryptographic operation.
+            </summary>
+            <value>The feedback size in bits.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.IV">
+            <summary>
+            Gets or sets the initialization vector (IV) for the symmetric algorithm.
+            </summary>
+            <value>The initialization vector.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Key">
+            <summary>
+            Gets or sets the secret key for the symmetric algorithm.
+            </summary>
+            <value>The secret key to use for the symmetric algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.KeySize">
+            <summary>
+            Gets or sets the size, in bits, of the secret key used by the symmetric algorithm.
+            </summary>
+            <value>The size, in bits, of the secret key used by the symmetric algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.LegalBlockSizes">
+            <summary>
+            Gets the block sizes that are supported by the symmetric algorithm.
+            </summary>
+            <value>An array that contains the block sizes supported by the algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.LegalKeySizes">
+            <summary>
+            Gets the key sizes that are supported by the symmetric algorithm.
+            </summary>
+            <value>An array that contains the key sizes supported by the algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Mode">
+            <summary>
+            Gets or sets the mode for operation of the symmetric algorithm.
+            </summary>
+            <value>The mode for operation of the symmetric algorithm.</value>
+        </member>
+        <member name="P:Rebex.Legacy.Cryptography.SymmetricAlgorithm.Padding">
+            <summary>
+            Gets or sets the padding mode used in the symmetric algorithm.
+            </summary>
+            <value>The padding mode used in the symmetric algorithm.</value>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.TripleDESCryptoServiceProvider">
+            <summary>
+            Implements TripleDES symmetric algorithm.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.TripleDES">
+            <summary>
+            Represents Triple DES (3DES) symmetric algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.TripleDES.Create">
+            <summary>
+            Creates default implementation of <see cref="T:Rebex.Legacy.Cryptography.TripleDES"/> symmetric algorithm.
+            </summary>
+            <returns>Default implementation of TripleDES symmetric algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.TripleDES.Create(System.String)">
+            <summary>
+            Creates implementation of <see cref="T:Rebex.Legacy.Cryptography.TripleDES"/> symmetric algorithm with provided name.
+            </summary>
+            <param name="algName">Name of TripleDES implementation.</param>
+            <returns>Implementation of TripleDES symmetric algorithm.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.TripleDES.IsWeakKey(System.Byte[])">
+            <summary>
+            Checks if the key is considered as weak.
+            </summary>
+            <param name="key">Key to check.</param>
+            <returns>True if the key is weak; otherwise false.</returns>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.TripleDES.#ctor">
+            <summary>
+            Initializes TripleDES symmetric algorithm.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA256Managed">
+            <summary>
+            Managed implementation of SHA256 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA256Managed.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA384Managed">
+            <summary>
+            Managed implementation of SHA384 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA384Managed.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+        <member name="T:Rebex.Legacy.Cryptography.SHA512Managed">
+            <summary>
+            Managed implementation of SHA512 hash algorithm.
+            </summary>
+        </member>
+        <member name="M:Rebex.Legacy.Cryptography.SHA512Managed.#ctor">
+            <summary>
+            Initializes new instance.
+            </summary>
+        </member>
+    </members>
+</doc>

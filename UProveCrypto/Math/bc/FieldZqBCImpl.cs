@@ -13,6 +13,7 @@
 
 #if BOUNCY_CASTLE
 
+using Rebex.Legacy.Cryptography;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;

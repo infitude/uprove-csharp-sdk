@@ -9,6 +9,11 @@ rights granted under the Open Specification Promise.
 
 For more information about U-Prove, visit http://www.microsoft.com/u-prove.
 
+## Rebex Labs
+https://labs.rebex.net/CryptoRT
+
+Rebex Cryptography for Windows Store Apps and Windows Phone 8.1
+Porting cryptographic applications from classic .NET to target Windows Store Apps or Windows Phone 8.1 is difficult. The new platforms lack the good old System.Security.Cryptography namespace. Instead, they offer a new cryptographic API in Windows.Security.Cryptography namespace (based on Windows Runtime API), but it's completely different and lacks many previously-available features.
 
 CONTENTS:
 ---------

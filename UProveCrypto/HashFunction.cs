@@ -48,7 +48,7 @@ namespace UProveCrypto
             }
 
 #if NETFX_CORE
-            hash = HashAlgorithmProvider.OpenAlgorithm(hashAlgorithm.Replace("-", "")).CreateHash();
+            hash = HashAlgorithmProvider.OpenAlgorithm(hashAlgorithm.ToUpper().Replace("-", "")).CreateHash();
 #else // NETFX_CORE
 #if SILVERLIGHT
             if (hashAlgorithm.Equals("SHA", StringComparison.OrdinalIgnoreCase) ||
@@ -69,8 +69,7 @@ namespace UProveCrypto
             {
                 hash = null;
             }
-#else
-#if DOTNET_CORE
+#else   // DOTNET CORE  (this was the 4.0 way; hash = HashAlgorithm.Create(hashAlgorithm);)
             if (hashAlgorithm.Equals("SHA", StringComparison.OrdinalIgnoreCase) ||
                 hashAlgorithm.Equals("SHA1", StringComparison.OrdinalIgnoreCase) ||
                 hashAlgorithm.Equals("System.Security.Cryptography.SHA1", StringComparison.OrdinalIgnoreCase) ||
@@ -96,9 +95,7 @@ namespace UProveCrypto
             {
                 hash = null;
             }
-#else
-            hash = HashAlgorithm.Create(hashAlgorithm);
-#endif // DOTNET_CORE
+
 #endif // SILVERLIGHT
 #endif // NETFX_CORE
             if (hash == null)
